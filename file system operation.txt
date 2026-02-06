@@ -1,0 +1,37 @@
+Assessment: File System Concepts
+
+1. What is the difference between synchronous and asynchronous file operations?
+Answer:
+Synchronous file operations block the execution of the program until the file task is completed, meaning the next line of code waits. Asynchronous file operations do not block execution; they run in the background and use callbacks, promises, or async/await to handle results once the operation finishes.
+
+2. When should you use file streams instead of reading the entire file?
+Answer:
+File streams should be used when working with large files or continuous data because they process data in chunks instead of loading the entire file into memory. This improves performance and reduces memory usage.
+
+3. Explain the purpose of the ‘utf8’ encoding parameter in file operations.
+Answer:
+The utf8 encoding parameter tells the file system to read or write data as human-readable text. Without it, data is handled as raw binary (Buffer), which is harder to work with for text-based files.
+
+4. What are the common error codes in file system operations and what do they mean?
+Answer:
+ENOENT means the file or directory does not exist.
+EACCES means permission is denied.
+EEXIST means the file or directory already exists.
+ENOTDIR means a directory was expected but a file was found.
+EISDIR means a file was expected but a directory was found.
+
+5. How would you safely delete a directory with all its contents?
+Answer:
+A directory can be safely deleted by using a recursive delete method that removes all files and subdirectories first and then deletes the parent directory.
+
+6. Explain the concept of piping in streams with an example.
+Answer:
+Piping is a mechanism used to pass data directly from one stream to another. For example, data can be read from a source file stream and written to a destination file stream without manually reading and writing chunks of data.
+
+7. Why is it important to handle errors in file operations?
+Answer:
+Handling errors is important to prevent application crashes, detect issues such as missing files or permission problems, and ensure the program behaves safely and reliably.
+
+8. What is the difference between writeFile and appendFile methods?
+Answer:
+writeFile creates a new file or overwrites an existing file, whereas appendFile adds new data to the end of an existing file without removing its previous content.
